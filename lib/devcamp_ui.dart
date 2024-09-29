@@ -11,7 +11,14 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Welcome to DevCamp'),
+      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+
+          Text('Welcome to DevCamp',style: TextStyle(fontSize: 25,),),
+          SizedBox(height: 20,),
+          Image.asset('assets/poster.jpg')
+        ],
+      ),
     );
   }
 }
