@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdevcamp/devcamp_ui.dart';
 
 void main(){
   runApp(Myapp());
@@ -9,12 +10,16 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar:AppBar(
+    return MaterialApp(
+        home: Scaffold(appBar:AppBar(
       backgroundColor: Colors.blue,
 
-      title: Text('Flutter DevCamp',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+      title: Text('Flutter DevCamp',style: TextStyle(color: Colors.white,
+          fontWeight: FontWeight.bold),),
       
-    ),);
-  }
+    ),
+        body: FlutterDevCampUI(),
+        )
+    );  }
 }
 
