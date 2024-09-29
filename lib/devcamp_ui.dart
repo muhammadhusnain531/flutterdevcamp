@@ -6,7 +6,15 @@ class FlutterDevCampUI extends StatefulWidget {
   @override
   State<FlutterDevCampUI> createState() => _FlutterDevCampUIState();
 }
-
+final List<Widget> topics =[
+  Text('1 Introduction to flutter'),
+  Text('2 Flutter Basics and Layout'),
+  Text('3 Intro to state management Riverpod with API'),
+  Text('4 Riverpod with Firebase'),
+  Text('5 Flutter and API Integration'),
+  Text('6 Flutter with Firebase database , storage'),
+  Text('7 Riverpod With advance Concepts'),
+];
 class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
   @override
   Widget build(BuildContext context) {
@@ -42,7 +50,11 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-          )
+          ),
+          ListView.builder(shrinkWrap: true,
+          itemCount: topics.length,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context,)
         ],
       ),
     );
