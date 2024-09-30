@@ -6,7 +6,7 @@ class FlutterDevCampUI extends StatefulWidget {
   @override
   State<FlutterDevCampUI> createState() => _FlutterDevCampUIState();
 }
-
+ bool isTopicsVisible = false;
 final List<Widget> topics = [
   Text('Introduction to flutter'),
   Text('Flutter Basics and Layout'),
@@ -39,7 +39,11 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
           ),
           Center(
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                 isTopicsVisible = !isTopicsVisible;
+                });
+              },
               style: ButtonStyle(
                   backgroundColor:
                   const MaterialStatePropertyAll<Color>(Colors.blue),
@@ -48,25 +52,29 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ))),
               child: Text(
-                'Click Me',
+                '${isTopicsVisible ? 'Hide' : 'Reveal'} Topics',
                 style: TextStyle(color: Colors.white),
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: topics.length,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (contxt, index) {
-                return Row(
-                  children: [
-                    Text('${index + 1}.'),
-                    const SizedBox(width: 4),
-                    topics[index],
-                  ],
-                );
-              },
+          SizedBox(height: 20,),
+          Visibility(
+            visible: isTopicsVisible,
+            child: Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: topics.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (contxt, index) {
+                  return Row(
+                    children: [
+                      Text('${index + 1}.',),
+                      const SizedBox(width: 4),
+                      topics[index],
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ],
