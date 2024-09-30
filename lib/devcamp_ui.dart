@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdevcamp/mentor_details.dart';
 import 'package:flutterdevcamp/mentor_model.dart';
 
 class FlutterDevCampUI extends StatefulWidget {
@@ -114,6 +115,10 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                   return  SizedBox(height: 100,width: 120,
                     child: InkWell(
                       onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => MentorsDetails(
+                              mentorsModel: mentorsModel[index],
+                            )));
 
                       },
                       child: Stack(
