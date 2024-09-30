@@ -6,15 +6,17 @@ class FlutterDevCampUI extends StatefulWidget {
   @override
   State<FlutterDevCampUI> createState() => _FlutterDevCampUIState();
 }
-final List<Widget> topics =[
-  Text('1 Introduction to flutter'),
-  Text('2 Flutter Basics and Layout'),
-  Text('3 Intro to state management Riverpod with API'),
-  Text('4 Riverpod with Firebase'),
-  Text('5 Flutter and API Integration'),
-  Text('6 Flutter with Firebase database , storage'),
-  Text('7 Riverpod With advance Concepts'),
+
+final List<Widget> topics = [
+  Text('Introduction to flutter'),
+  Text('Flutter Basics and Layout'),
+  Text('Intro to state management Riverpod with API'),
+  Text('Riverpod with Firebase'),
+  Text('Flutter and API Integration'),
+  Text('Flutter with Firebase database , storage'),
+  Text('Riverpod With advance Concepts'),
 ];
+
 class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
   @override
   Widget build(BuildContext context) {
@@ -40,8 +42,8 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor:
-                  const WidgetStatePropertyAll<Color>(Colors.blue),
-                  shape: const WidgetStatePropertyAll<OutlinedBorder>(
+                  const MaterialStatePropertyAll<Color>(Colors.blue),
+                  shape: const MaterialStatePropertyAll<OutlinedBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ))),
@@ -51,10 +53,22 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
               ),
             ),
           ),
-          ListView.builder(shrinkWrap: true,
-          itemCount: topics.length,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context,)
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: topics.length,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (contxt, index) {
+                return Row(
+                  children: [
+                    Text('${index + 1}.'),
+                    const SizedBox(width: 4),
+                    topics[index],
+                  ],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
