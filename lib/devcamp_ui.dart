@@ -21,20 +21,20 @@ final List<Widget> topics = [
 
 final List<MentorsModel> mentorsModel = [
   MentorsModel(
-      'assets/images/simon.jpeg', 'Simon', 'https://www.linkedin.com/in/simonlightfoot/'),
+      'assets/simon.jpeg', 'Simon', 'https://www.linkedin.com/in/simonlightfoot/'),
   MentorsModel(
-      'assets/images/franklin.jpeg', 'Franklin', 'https://www.linkedin.com/in/franklin-oladipo/'),
+      'assets/franklin.jpeg', 'Franklin', 'https://www.linkedin.com/in/franklin-oladipo/'),
   MentorsModel(
-      'assets/images/nishtha.jpeg', 'Nishtha', 'https://www.linkedin.com/in/nishtha-saraswat/'),
+      'assets/nishtha.jpeg', 'Nishtha', 'https://www.linkedin.com/in/nishtha-saraswat/'),
   MentorsModel(
-      'assets/images/renuka.jpeg', 'Renuka', 'https://www.linkedin.com/in/renukakelkar/'),
-  MentorsModel('assets/images/shree.jpeg', 'Shree', 'https://www.linkedin.com/in/shrihriday/'),
+      'assets/renuka.jpeg', 'Renuka', 'https://www.linkedin.com/in/renukakelkar/'),
+  MentorsModel('assets/shree.jpeg', 'Shree', 'https://www.linkedin.com/in/shrihriday/'),
   MentorsModel(
-      'assets/images/sumith.jpeg', 'Sumith', 'https://www.linkedin.com/in/sumith-damodaran/'),
+      'assets/sumith.jpeg', 'Sumith', 'https://www.linkedin.com/in/sumith-damodaran/'),
   MentorsModel(
-      'assets/images/yeasin.jpeg', 'Yeasin', 'https://www.linkedin.com/in/mdyeasinsheikh/'),
+      'assets/yeasin.jpeg', 'Yeasin', 'https://www.linkedin.com/in/mdyeasinsheikh/'),
   MentorsModel(
-      'assets/images/anthony.jpeg', 'Anthony', 'https://www.linkedin.com/in/atuoha-anthony/'),
+      'assets/anthony.jpeg', 'Anthony', 'https://www.linkedin.com/in/atuoha-anthony/'),
 ];
 
 class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
@@ -111,22 +111,72 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                 itemCount: mentorsModel.length,
                 itemBuilder: (context, index) {
                  // final mentor = mentorsModel[index];
-                  return  Stack(
-                    children: [
-                      Card(
-                        child: Column(
-                          children: [
-                            CircleAvatar(backgroundImage: AssetImage(mentorsModel[index].img),),
-                            Text('Flutter')
-                          ],
-                        ),
-                      )
-                    ],
+                  return  SizedBox(height: 100,width: 120,
+                    child: InkWell(
+                      onTap: (){
+
+                      },
+                      child: Stack(
+                        children: [
+                          SizedBox(height: 100,width: 100,),
+                          Card(
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(14.0),
+                                  child: Column(
+                                    children: [
+                                      CircleAvatar(backgroundImage: AssetImage(mentorsModel[index].img),),
+                                      SizedBox(height: 4,),
+                                      Text(mentorsModel[index].name)
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                          child:
+                      
+                          SizedBox(
+                            height: 30,width: 30,
+                              child:  Image.asset('assets/flutter.png')
+                          ),
+                                        ),
+                          
+                        ],
+                      ),
+                    ),
                   );
                 },
               ),
             ),
           ),
+          SizedBox(height: 10,),
+          Row(
+            children: [
+              Text(' Write your feedback',style: TextStyle(fontSize:25),),
+              SizedBox(width: 10,),
+              Icon(Icons.check_circle,color: Colors.green,)
+            ],
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              label:Text('Write your feedback'),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(18))
+            ),
+
+          ),
+          ElevatedButton(onPressed: (){},
+              style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.green),
+                shape: WidgetStatePropertyAll<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ), ),
+              child: Text('Submit your feedback',style: TextStyle(color: Colors.white),))
+
         ],
       ),
     );
