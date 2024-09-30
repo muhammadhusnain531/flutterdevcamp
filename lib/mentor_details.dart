@@ -25,26 +25,29 @@ class MentorsDetails extends StatelessWidget {
                   child: Image.asset(mentorsModel.img))),
               const SizedBox(height: 10),
 
-              Row(
-                children: [
-                  Text('LinkedIn Profile => ',
-                    style: TextStyle(fontSize: 18),),
-                  InkWell(
-                    onTap: () {
-                     _launchUrl(Uri.parse(mentorsModel.url));
-                    },
-                    child: Text(
-                      mentorsModel.name,
-                      style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 20,
-                        decoration: TextDecoration.underline,
-                        decorationThickness: 2,
-                        decorationColor: Colors.green,
+              Center(
+                child: Row(
+                  children: [
+                    Text('LinkedIn Profile => ',
+                      style: TextStyle(fontSize: 18),),
+                    InkWell(
+                      onTap: () {
+                       _launchUrl(Uri.parse(mentorsModel.url));
+                      },
+                      child: Text(
+
+                        mentorsModel.name,
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 20,
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 2,
+                          decorationColor: Colors.green,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
