@@ -6,7 +6,8 @@ class FlutterDevCampUI extends StatefulWidget {
   @override
   State<FlutterDevCampUI> createState() => _FlutterDevCampUIState();
 }
- bool isTopicsVisible = false;
+
+bool isTopicsVisible = false;
 final List<Widget> topics = [
   Text('Introduction to flutter'),
   Text('Flutter Basics and Layout'),
@@ -41,7 +42,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
             child: ElevatedButton(
               onPressed: () {
                 setState(() {
-                 isTopicsVisible = !isTopicsVisible;
+                  isTopicsVisible = !isTopicsVisible;
                 });
               },
               style: ButtonStyle(
@@ -57,7 +58,9 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
               ),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Visibility(
             visible: isTopicsVisible,
             child: Expanded(
@@ -68,7 +71,9 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                 itemBuilder: (contxt, index) {
                   return Row(
                     children: [
-                      Text('${index + 1}.',),
+                      Text(
+                        '${index + 1}.',
+                      ),
                       const SizedBox(width: 4),
                       topics[index],
                     ],
@@ -77,6 +82,12 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
               ),
             ),
           ),
+          Align(
+              alignment: Alignment.center,
+              child: Text(
+                'Mentors list',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              )),
         ],
       ),
     );
