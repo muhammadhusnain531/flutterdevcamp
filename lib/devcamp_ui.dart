@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdevcamp/mentor_model.dart';
 
 class FlutterDevCampUI extends StatefulWidget {
   const FlutterDevCampUI({super.key});
@@ -64,8 +65,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                 });
               },
               style: ButtonStyle(
-                  backgroundColor:
-                  const MaterialStatePropertyAll<Color>(Colors.blue),
+                  backgroundColor: const MaterialStatePropertyAll<Color>(Colors.blue),
                   shape: const MaterialStatePropertyAll<OutlinedBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -81,37 +81,66 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
           ),
           Visibility(
             visible: isTopicsVisible,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: topics.length,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (contxt, index) {
-                  return Row(
-                    children: [
-                      Text(
-                        '${index + 1}.',
-                      ),
-                      const SizedBox(width: 4),
-                      topics[index],
-                    ],
-                  );
-                },
-              ),
-
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: topics.length,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (contxt, index) {
+                return Row(
+                  children: [
+                    Text('${index + 1}.'),
+                    const SizedBox(width: 4),
+                    topics[index],
+                  ],
+                );
+              },
+            ),
           ),
           Align(
-              alignment: Alignment.center,
-              child: Text(
-                'Mentors list',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              )),
-          ListView.builder(itemCount: mentorsModel.length,
-          itemBuilder: (context,index){
+            alignment: Alignment.center,
+            child: Text(
+              'Mentors list',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: mentorsModel.length,
+              itemBuilder: (context, index) {
+               final mentor = mentorsModel[index];
+                return Stack(
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      child: Card(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      elevation: 4,
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            children: [
+                              CircleAvatar(backgroundImage: (AssetImage(mentor.img))
+                                ,),
+                              Text(mentor.name)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Padding(padding: const EdgeInsets.all(4.0),
+                      child: SizedBox(
+                        width: 25,height: 25,
+                        child: Image.asset('assets/images/flutter.png'),
+                      ),),
+                    )
 
-          }
-
-
-            ,)
+                  ],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
