@@ -53,7 +53,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
           SizedBox(
             height: 20,
           ),
-          Image.asset('assets/poster.jpg'),
+          Image.asset('assets/devcamp_img.jpeg'),
           SizedBox(
             height: 20,
           ),
@@ -103,12 +103,28 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: mentorsModel.length,
-              itemBuilder: (context, index) {
-
-              },
+          SizedBox(
+            height: 100,
+            child: Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: mentorsModel.length,
+                itemBuilder: (context, index) {
+                 // final mentor = mentorsModel[index];
+                  return  Stack(
+                    children: [
+                      Card(
+                        child: Column(
+                          children: [
+                            CircleAvatar(backgroundImage: AssetImage(mentorsModel[index].img),),
+                            Text('Flutter')
+                          ],
+                        ),
+                      )
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ],
