@@ -107,37 +107,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
             child: ListView.builder(
               itemCount: mentorsModel.length,
               itemBuilder: (context, index) {
-               final mentor = mentorsModel[index];
-                return Stack(
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      child: Card(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      elevation: 4,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            children: [
-                              CircleAvatar(backgroundImage: (AssetImage(mentor.img))
-                                ,),
-                              Text(mentor.name)
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(padding: const EdgeInsets.all(4.0),
-                      child: SizedBox(
-                        width: 25,height: 25,
-                        child: Image.asset('assets/images/flutter.png'),
-                      ),),
-                    )
 
-                  ],
-                );
               },
             ),
           ),
