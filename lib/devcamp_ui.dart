@@ -63,7 +63,6 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
           ),
           Visibility(
             visible: isTopicsVisible,
-            child: Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: topics.length,
@@ -80,7 +79,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                   );
                 },
               ),
-            ),
+
           ),
           Align(
               alignment: Alignment.center,
