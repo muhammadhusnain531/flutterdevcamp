@@ -18,6 +18,24 @@ final List<Widget> topics = [
   Text('Riverpod With advance Concepts'),
 ];
 
+final List<MentorsModel> mentorsModel = [
+  MentorsModel(
+      'assets/images/simon.jpeg', 'Simon', 'https://www.linkedin.com/in/simonlightfoot/'),
+  MentorsModel(
+      'assets/images/franklin.jpeg', 'Franklin', 'https://www.linkedin.com/in/franklin-oladipo/'),
+  MentorsModel(
+      'assets/images/nishtha.jpeg', 'Nishtha', 'https://www.linkedin.com/in/nishtha-saraswat/'),
+  MentorsModel(
+      'assets/images/renuka.jpeg', 'Renuka', 'https://www.linkedin.com/in/renukakelkar/'),
+  MentorsModel('assets/images/shree.jpeg', 'Shree', 'https://www.linkedin.com/in/shrihriday/'),
+  MentorsModel(
+      'assets/images/sumith.jpeg', 'Sumith', 'https://www.linkedin.com/in/sumith-damodaran/'),
+  MentorsModel(
+      'assets/images/yeasin.jpeg', 'Yeasin', 'https://www.linkedin.com/in/mdyeasinsheikh/'),
+  MentorsModel(
+      'assets/images/anthony.jpeg', 'Anthony', 'https://www.linkedin.com/in/atuoha-anthony/'),
+];
+
 class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
   @override
   Widget build(BuildContext context) {
@@ -87,6 +105,13 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                 'Mentors list',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               )),
+          ListView.builder(itemCount: mentorsModel.length,
+          itemBuilder: (context,index){
+
+          }
+
+
+            ,)
         ],
       ),
     );
