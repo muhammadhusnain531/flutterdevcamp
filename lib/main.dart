@@ -18,7 +18,7 @@ class Myapp extends StatelessWidget {
           fontWeight: FontWeight.bold),),
       
     ),
-        body: FlutterDevCampUI(),
+        body: splash_scr(),
         )
     );  }
 }
