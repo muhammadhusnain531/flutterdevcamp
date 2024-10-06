@@ -12,6 +12,7 @@ class MentorsDetails extends StatelessWidget {
     return Scaffold(appBar: AppBar(
         backgroundColor: Colors.blue,
 
+
         title: Text('Mentors Details',style: TextStyle(color: Colors.white,
             fontWeight: FontWeight.bold),),
 

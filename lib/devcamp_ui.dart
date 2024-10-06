@@ -114,7 +114,7 @@ class _FlutterDevCampUIState extends State<FlutterDevCampUI> {
                  // final mentor = mentorsModel[index];
                   return  SizedBox(height: 100,width: 120,
                     child: InkWell(
-                      onTap: (){
+                      onTap: ( ){
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => MentorsDetails(
                               mentorsModel: mentorsModel[index],

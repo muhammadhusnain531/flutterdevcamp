@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "497283225540",
+    "project_id": "flutter-devcamp-3b311",
+    "storage_bucket": "flutter-devcamp-3b311.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497283225540:android:f3b997b9681add7c5bf691",
+        "android_client_info": {
+          "package_name": "com.example.flutterdevcamp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxZsFeJNoKLJ3r3h1evaabAcooBk-v4ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
