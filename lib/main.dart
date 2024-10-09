@@ -17,7 +17,7 @@ class Myapp extends StatelessWidget {
       title: Text('Flutter DevCamp',style: TextStyle(color: Colors.white,
           fontWeight: FontWeight.bold),),
       
-    ),
+    ),//dfsd
         body: splash_scr(),
         )
     );  }
