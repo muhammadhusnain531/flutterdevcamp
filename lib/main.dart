@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';  // Import Firebase
 import 'package:flutterdevcamp/devcamp_ui.dart';
+import 'package:flutterdevcamp/signin_scren.dart';
+import 'package:flutterdevcamp/signup_scren.dart';
 
-void main(){
-  runApp(Myapp());
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();  // Ensure Flutter is initialized
+  await Firebase.initializeApp();  // Initialize Firebase before app launch
+  runApp(MyApp());
 }
-class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(appBar:AppBar(
-      backgroundColor: Colors.blue,
-
-      title: Text('Flutter DevCamp',style: TextStyle(color: Colors.white,
-          fontWeight: FontWeight.bold),),
-      
-    ),//dfsd
-        body: FlutterDevCampUI(),
-        )
-    );  }
+      home: Scaffold(
+        body: LoginScreen(),  // Replace with your login screen widget
+      ),
+    );
+  }
 }
-
