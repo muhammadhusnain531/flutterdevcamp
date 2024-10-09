@@ -42,4 +42,4 @@ android {
 flutter {
     source = "../.."
 }
-apply plugins "com.google.gms.google-services"
+//apply plugins "com.google.gms.google-services"
